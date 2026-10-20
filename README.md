@@ -28,6 +28,7 @@ Spatiotemporal Control of Vascular Cell Plasticity during Atherosclerosis
 | GSVA | Hänzelmann S et al., 2013 | V2.4.1 | <https://github.com/rcastelo/GSVA> |
 
 ###Directory tree
+```text
 .
 ├── 00data_Processing/
 │   ├── 1.1Creat_RNA.py
@@ -61,7 +62,6 @@ Spatiotemporal Control of Vascular Cell Plasticity during Atherosclerosis
 │   │   ├── Figure1I.r
 │   │   ├── figure1J.py
 │   │   └── figure1K.r
-│   │
 │   ├── fig2/
 │   │   ├── 2e.RDS
 │   │   ├── 2g.RDS
@@ -76,7 +76,6 @@ Spatiotemporal Control of Vascular Cell Plasticity during Atherosclerosis
 │   │   ├── figure2h.r
 │   │   ├── figure2j.r
 │   │   └── plaque_gene.csv
-│   │
 │   ├── fig3/
 │   │   ├── 3o.RDS
 │   │   ├── figure3b.r
@@ -87,7 +86,6 @@ Spatiotemporal Control of Vascular Cell Plasticity during Atherosclerosis
 │   │   ├── figure3n.r
 │   │   ├── figure3o.r
 │   │   └── figure3p.ipynb
-│   │
 │   ├── fig4/
 │   │   ├── 4a_p.RDS
 │   │   ├── 4a.r
@@ -95,21 +93,17 @@ Spatiotemporal Control of Vascular Cell Plasticity during Atherosclerosis
 │   │   ├── figure4d.ipynb
 │   │   ├── scenic_select.RDS
 │   │   └── scenic_type.RDS
-│   │
 │   ├── sup1/
 │   │   ├── S1A.ipynb
 │   │   ├── S1I.ipynb
 │   │   ├── S1J.py
 │   │   └── S1K.ipynb
-│   │
 │   ├── sup2/
 │   │   └── S2.py
-│   │
 │   ├── sup3/
 │   │   ├── S3A&S3B.ipynb
 │   │   ├── S3C_heatmap.ipynb
 │   │   └── S3D.py
-│   │
 │   ├── sup4/
 │   │   ├── gs.csv
 │   │   ├── let_ALL_save1.RDS
@@ -119,14 +113,12 @@ Spatiotemporal Control of Vascular Cell Plasticity during Atherosclerosis
 │   │   ├── sup4E.ipynb
 │   │   ├── sup4F.ipynb
 │   │   └── sup4G.ipynb
-│   │
 │   ├── sup5/
 │   │   ├── sup5A.ipynb
 │   │   ├── sup5C.ipynb
 │   │   ├── sup5D,G,H.ipynb
 │   │   ├── sup5E,F.ipynb
 │   │   └── sup5K.ipynb
-│   │
 │   └── sup6/
 │       ├── CELL_PROLIFERATION.csv
 │       ├── sup6A.ipynb
