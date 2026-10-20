@@ -1,4 +1,7 @@
-![Uploading image.png…]()
+This repository contains the code and analysis pipelines for the manuscript:
+Spatiotemporal Control of Vascular Cell Plasticity during Atherosclerosis
+<img width="4961" height="2026" alt="figure5_v7" src="https://github.com/user-attachments/assets/5a70dac0-2efa-4593-8776-bf6200d1d105" />
+
 
 ## Software and algorithms
 
