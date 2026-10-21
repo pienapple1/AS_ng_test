@@ -286,7 +286,8 @@ are merged, and each cell type is downsampled to 2,000 cells for runtime; see th
 
 - `sup4b.ipynb` — Spatial expression of plaque-related gene sets in human clinical samples, scored with Seurat `AddModuleScore()`.
 Mouse genes must first be converted to human orthologs (see `gs.csv`). Input: the Seurat object after `00data_Processing/`.
-- `sup4c.ipynb` — Density distribution of mSMC-1 and mSMC-2 in the LC region along blood-flow direction. The blood-flow column is defined in `00data_Processing/1.4sample_area_spilt_and_digitization.py`.
+- `sup4c.ipynb` — Density distribution of mSMC-1 and mSMC-2 in the LC region along blood-flow direction. The blood-flow column is defined in
+`00data_Processing/1.4sample_area_spilt_and_digitization.py`.
 - `sup4E.ipynb` — Expression patterns of plaque-related gene sets in human clinical samples. Human clinical spatial transcriptomics samples
 from Lai et al., Bleckwehl et al., and this study are collected, pseudo-bulk is built, and shared gene sets are extracted for analysis; see the code.
 - `sup4F.ipynb` — Molecular staging of plaque severity in human clinical samples with GSVA. Samples from Lai et al., Bleckwehl et al., and this
