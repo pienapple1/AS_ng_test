@@ -133,8 +133,9 @@ Both Python and R are used.
 
 ## Workflow overview
 
-The repository is organized into two stages: (i) spatial transcriptomics and single-cell data processing (`00data_Processing/`),
- and (ii) generation of main and supplementary figures (`01figure_Plotting/`). Scripts are numbered approximately in execution order.
+The repository is organized into two stages: (i) spatial transcriptomics and single-cell data processing
+(`00data_Processing/`),and (ii) generation of main and supplementary figures (`01figure_Plotting/`).
+Scripts are numbered approximately in execution order.
 
 ---
 
@@ -142,26 +143,31 @@ The repository is organized into two stages: (i) spatial transcriptomics and sin
 
 ### 1.1 mRNA image generation and registration
 
-The ssDNA nuclear image and the mRNA signal image are registered. mRNA images are generated with `00data_Processing/1.1Creat_RNA.py` (Python 3.8)
- from the Stereo-seq gene expression matrix (`*.txt` or `*.gem`; file format: <https://db.cngb.org/stomics/project/STT0000118/spatialGeneExpression>).
+The ssDNA nuclear image and the mRNA signal image are registered. mRNA images are generated with
+`00data_Processing/1.1Creat_RNA.py` (Python 3.8)
+ from the Stereo-seq gene expression matrix
+(`*.txt` or `*.gem`; file format: <https://db.cngb.org/stomics/project/STT0000118/spatialGeneExpression>).
 After generation, images are manually aligned in Photoshop or ImageJ using the reference lines provided by Stereo-seq.
 
 ### 1.2 Cell segmentation and Seurat object construction
 
-Cell segmentation is performed on the calibrated ssDNA image with `00data_Processing/1.2cellsegmentation.py` (Python 3.8). Inputs
-are the calibrated ssDNA image and the gene expression matrix (`*.txt` or `*.gem`). Before running, ensure that the signal image
-and the ssDNA image are consistently oriented. Seurat objects are then constructed in R 4.2 from the segmentation-derived metadata
-and the cell × gene matrix (`*_data.loom`, `*_metadata.csv`) using `00data_Processing/1.2Create_seurat.r` and `00data_Processing/1.3Creat_bin_data.r`.
+Cell segmentation is performed on the calibrated ssDNA image with `00data_Processing/1.2cellsegmentation.py`
+(Python 3.8). Inputs are the calibrated ssDNA image and the gene expression matrix (`*.txt` or `*.gem`).
+Before running, ensure that the signal image and the ssDNA image are consistently oriented.
+Seurat objects are then constructed in R 4.2 from the segmentation-derived metadata
+and the cell × gene matrix (`*_data.loom`, `*_metadata.csv`) using `00data_Processing/1.2Create_seurat.r`
+and `00data_Processing/1.3Creat_bin_data.r`.
 
 ### 1.3 Pseudo-cell (bin) construction
 
-When cell segmentation is not required, pseudo-cells (bins) can be generated for rapid downstream analyses such as area statistics
-and spatial enrichment. Use R 4.2 with `00data_Processing/1.3Create_bin_data.R` and `00data_Processing/1.3Create_seurat.r`, and
-set the bin size as needed (e.g., bin50 = 50spots × 50spots = 25 µm × 25 µm). Tissue segmentation is required before bin construction and
-can be based on gene capture counts or, as in this study, on the calibrated ssDNA image or the cell-segmentation mask. Tissue
-cutting is performed with `00data_Processing/1.3tissuecut.py` (Python 3.8); adjust parameters as needed. To remain consistent
-with cell segmentation, the cell-segmentation mask is recommended. Note that `1.3Creat_bin_data.r` and `1.3Create_bin_data.R`
-differ only in filename case and are two distinct files on Linux; their roles should be checked before execution.
+When cell segmentation is not required, pseudo-cells (bins) can be generated for rapid downstream analyses
+such as area statistics and spatial enrichment. Use R 4.2 with `00data_Processing/1.3Create_bin_data.R` and
+`00data_Processing/1.3Create_seurat.r`, and set the bin size as needed (e.g., bin50 = 50spots × 50spots = 25 µm × 25 µm).
+Tissue segmentation is required before bin construction and can be based on gene capture counts or, as in this study,
+on the calibrated ssDNA image or the cell-segmentation mask. Tissue cutting is performed with `00data_Processing/1.3tissuecut.py`
+(Python 3.8); adjust parameters as needed. To remain consistent with cell segmentation, the cell-segmentation mask is recommended.
+Note that `1.3Creat_bin_data.r` and `1.3Create_bin_data.R` differ only in filename case and are two distinct files on Linux;
+their roles should be checked before execution.
 
 ### 1.4 Sample splitting, vessel region division, and digitization
 
