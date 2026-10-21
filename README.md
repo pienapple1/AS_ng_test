@@ -157,7 +157,7 @@ and the cell × gene matrix (`*_data.loom`, `*_metadata.csv`) using `00data_Proc
 
 When cell segmentation is not required, pseudo-cells (bins) can be generated for rapid downstream analyses such as area statistics
 and spatial enrichment. Use R 4.2 with `00data_Processing/1.3Create_bin_data.R` and `00data_Processing/1.3Create_seurat.r`, and
-set the bin size as needed (e.g., bin50 = 50 spots ≈ 25 µm × 25 µm). Tissue segmentation is required before bin construction and
+set the bin size as needed (e.g., bin50 = 50spots × 50spots = 25 µm × 25 µm). Tissue segmentation is required before bin construction and
 can be based on gene capture counts or, as in this study, on the calibrated ssDNA image or the cell-segmentation mask. Tissue
 cutting is performed with `00data_Processing/1.3tissuecut.py` (Python 3.8); adjust parameters as needed. To remain consistent
 with cell segmentation, the cell-segmentation mask is recommended. Note that `1.3Creat_bin_data.r` and `1.3Create_bin_data.R`
