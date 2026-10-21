@@ -190,7 +190,8 @@ Counts for each vessel region were first aggregated into pseudo-bulk profiles. R
 
 ### 1.8 Transcription factor analysis
 
-Configure the environment according to the pySCENIC documentation (<https://github.com/aertslab/pySCENIC>). Analysis scripts are `00data_Processing/1.8pseudobulk_of_celltype_area.ipynb`, `00data_Processing/1.8change.py`, and `00data_Processing/1.8pyscenic.sh`.
+Configure the environment according to the pySCENIC documentation (<https://github.com/aertslab/pySCENIC>). Analysis scripts are
+`00data_Processing/1.8pseudobulk_of_celltype_area.ipynb`, `00data_Processing/1.8change.py`, and `00data_Processing/1.8pyscenic.sh`.
 
 ---
 
@@ -198,7 +199,8 @@ Configure the environment according to the pySCENIC documentation (<https://gith
 
 ### Figure 1
 
-- `figure1F.r` — Gene-set scoring of single-cell data with Seurat `AddModuleScore()`. Input: mouse single-cell data processed by `00data_Processing/1.6scRNA_ref_del.r`.
+- `figure1F.r` — Gene-set scoring of single-cell data with Seurat `AddModuleScore()`. Input: mouse single-cell data processed
+by `00data_Processing/1.6scRNA_ref_del.r`.
 - `figure1G.py` — Spatial cell mask image generation. Inputs: final annotated metadata (e.g., `*.csv`) and the segmentation mask
 stored in `adata.uns["seg"]` by `00data_Processing/1.2cellsegmentation.py`. Python 3.8 and OpenCV 4.5.5 are recommended.
 - `figure1H.r` — Cell-type compositional changes across stages. Cell proportions are computed per sample and plotted as line charts with ggplot.
@@ -221,11 +223,13 @@ mouse spatial Seurat object after `00data_Processing/`.
 - `figure2g.r` — Mosaic plot of plaque severity across stages and regions in mouse samples. Data processed by `00data_Processing/`.
 - `figure2h.r` — Density distribution of cell types from vessel lumen to outer wall across stages. Merge sample metadata after `00data_Processing/`.
 - `figure2j.r` — Requires macrophage pseudo-bulk profiles. After `00data_Processing/`, extract macrophages from intima (layers 1–25)
-and adventitia (layers 75–100) per sample and region, then build pseudo-bulk. Layer definition follows `00data_Processing/1.4sample_area_spilt_and_digitization.py`.
+and adventitia (layers 75–100) per sample and region, then build pseudo-bulk. Layer definition follows
+`00data_Processing/1.4sample_area_spilt_and_digitization.py`.
 
 ### Figure 3
 
-- `figure3b.r` — Requires pseudo-bulk profiles per region and cell type (e.g., all SMC in GC-AA of sample 1). See `00data_Processing/1.8pseudobulk_of_celltype_area.ipynb`.
+- `figure3b.r` — Requires pseudo-bulk profiles per region and cell type (e.g., all SMC in GC-AA of sample 1). See
+`00data_Processing/1.8pseudobulk_of_celltype_area.ipynb`.
 - `figure3c.r` — Uses the final Seurat object after `00data_Processing/`. Extract the normalized gene expression matrix and metadata.
 The x-axis intima/adventitia corresponds to layer after inversion (`mer$layer <- abs(mer$layer-100)`).
 - `figure3d.ipynb` — Pi16 expression in fibroblasts from GSE155513 and this study’s single-cell data. Processing script:
@@ -241,7 +245,8 @@ in intima layers 1–25 and fibroblasts in adventitia layers 75–100, then merg
 
 ### Figure 4
 
-- `4a.r` — Analysis follows `00data_Processing/1.8pseudobulk_of_celltype_area.ipynb`, `00data_Processing/1.8change.py`, and `00data_Processing/1.8pyscenic.sh`. Pseudo-bulk per cell type is required.
+- `4a.r` — Analysis follows `00data_Processing/1.8pseudobulk_of_celltype_area.ipynb`, `00data_Processing/1.8change.py`, and
+`00data_Processing/1.8pyscenic.sh`. Pseudo-bulk per cell type is required.
 - `figure4d.ipynb` — GO enrichment of downstream targets of Sox4. The top 100 weighted targets of Sox4 were used; see the code.
 
 ### Supplementary Figure 1 (sup1)
@@ -310,5 +315,6 @@ required and are retained during cell segmentation. Analysis uses TopoVelo; see 
 ## Notes on scripts
 
 Several figure scripts share the same mask-generation logic (`figure1G.py`, `figure1J.py`, `figure2f.py`, `S1J.py`, `S2.py`, and `S3D.py`);
-they differ mainly in input metadata and annotation level. The layer system (1–100) used throughout is defined in `00data_Processing/1.4sample_area_spilt_and_digitization.py`; scripts referring to “layer” should use that definition. Some intermediate `.RDS`
+they differ mainly in input metadata and annotation level. The layer system (1–100) used throughout is defined in
+`00data_Processing/1.4sample_area_spilt_and_digitization.py`; scripts referring to “layer” should use that definition. Some intermediate `.RDS`
 objects are included for reproducibility; if they are large, consider Git LFS or regenerate them from the preprocessing scripts.
