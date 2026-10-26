@@ -44,7 +44,8 @@ Spatiotemporal Control of Vascular Cell Plasticity during Atherosclerosis
 │   ├── 1.6human_ST_data_ann.r
 │   ├── 1.6mouse_ST_data_ann.r
 │   ├── 1.6mouse_ST_data_cellsubtype.r
-│   ├── 1.6scRNA_ref_del.r
+│   ├── 1.6run_soupx.R
+│   ├── 1.6sc_qc_and_anno.R
 │   ├── 1.7gsva_ann.r
 │   ├── 1.7hotspot_plaque_related_gene.csv
 │   ├── 1.7result_data.RDS
@@ -185,7 +186,8 @@ is used to export the cell × gene expression matrix and spatial coordinates. Py
 ### 1.6 Cell type annotation
 
 Cell types in human and mouse spatial transcriptomics data were annotated with RCTD. A processed single-cell reference is
-required before RCTD. Single-cell reference processing is performed with `00data_Processing/1.6scRNA_ref_del.r` (R 4.2).
+required before RCTD. Single-cell reference processing is performed with `00data_Processing/1.6sc_qc_and_anno.R`
+and `00data_Processing/1.6run_soupx.R`(R 4.2).
 RCTD annotation of human and mouse spatial data is implemented in `00data_Processing/1.6human_ST_data_ann.r`,
 `00data_Processing/1.6mouse_ST_data_ann.r`, and `00data_Processing/1.6mouse_ST_data_cellsubtype.r`.
 
